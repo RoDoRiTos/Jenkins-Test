@@ -25,7 +25,7 @@ class CIBuilder{
         options.scenes = scenes;
         options.targetGroup = BuildTargetGroup.Standalone;
         options.target = BuildTarget.StandaloneWindows;
-        options.locationPathName = targetPath;
+        options.locationPathName = targetPath + "/" + appname;
         Build(options);
     }
 
