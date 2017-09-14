@@ -7,7 +7,7 @@ class CIBuilder{
     static string[] scenes = FindEnabledEditorScenes();
 
     static string appname = "YourProject";
-    static string targetPath = "target";
+    static string targetPath = "AutoBuild";
 
     private static string[] FindEnabledEditorScenes() {
         List<string> EditorScenes = new List<string>();
@@ -24,7 +24,7 @@ class CIBuilder{
         options.scenes = scenes;
         options.targetGroup = BuildTargetGroup.Standalone;
         options.target = BuildTarget.StandaloneWindows;
-        options.locationPathName = targetPath + "/" + appname;
+        options.locationPathName = targetPath + "/" + appname + ".exe";
         options.options = BuildOptions.None;
         Build(options);
     }
