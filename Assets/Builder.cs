@@ -26,6 +26,7 @@ class CIBuilder{
         options.targetGroup = BuildTargetGroup.Standalone;
         options.target = BuildTarget.StandaloneWindows;
         options.locationPathName = targetPath + "/" + appname;
+        options.options = BuildOptions.None;
         Build(options);
     }
 
