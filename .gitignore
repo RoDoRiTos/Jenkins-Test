@@ -2,7 +2,8 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Tt]emp/
-
+/[Ll]ibrary/
+/UnityPackageManager/
 # Visual Studio 2015 cache directory
 /.vs/
 
