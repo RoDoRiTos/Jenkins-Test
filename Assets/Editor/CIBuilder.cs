@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
-public static class CIBuilder{
+public class CIBuilder{
     static string[] scenes = FindEnabledEditorScenes();
 
     static string appname = "YourProject";
