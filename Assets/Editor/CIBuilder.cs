@@ -18,7 +18,7 @@ public static class CIBuilder{
         return EditorScenes.ToArray();
     }
 
-    static void PerformPCBuild() {
+    public static void PerformPCBuild() {
         BuildPlayerOptions options = new BuildPlayerOptions();
         options.scenes = scenes;
         options.targetGroup = BuildTargetGroup.Standalone;
@@ -28,7 +28,7 @@ public static class CIBuilder{
         Build(options);
     }
 
-    static void ExportToAndroidStudio() {
+    public static void ExportToAndroidStudio() {
         BuildPlayerOptions options = new BuildPlayerOptions();
         options.scenes = scenes;
         options.targetGroup = BuildTargetGroup.Android;
@@ -38,7 +38,7 @@ public static class CIBuilder{
         Build(options);
     }
 
-    static void Build(BuildPlayerOptions options) {
+    public static void Build(BuildPlayerOptions options) {
         EditorUserBuildSettings.SwitchActiveBuildTarget(options.targetGroup, options.target);
         string res = BuildPipeline.BuildPlayer(options);
         if (res.Length > 0) {
