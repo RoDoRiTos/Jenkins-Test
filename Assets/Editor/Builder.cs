@@ -19,7 +19,6 @@ class CIBuilder{
     }
 
     static void PerformPCBuild() {
-        string target = targetPath;
         BuildPlayerOptions options = new BuildPlayerOptions();
         options.scenes = scenes;
         options.targetGroup = BuildTargetGroup.Standalone;
@@ -29,6 +28,15 @@ class CIBuilder{
         Build(options);
     }
 
+    static void ExportToAndroidStudio() {
+        BuildPlayerOptions options = new BuildPlayerOptions();
+        options.scenes = scenes;
+        options.targetGroup = BuildTargetGroup.Android;
+        options.target = BuildTarget.Android;
+        options.options = BuildOptions.AcceptExternalModificationsToPlayer;
+        options.locationPathName = targetPath + "/" + appname;
+        Build(options);
+    }
 
     static void Build(BuildPlayerOptions options) {
         EditorUserBuildSettings.SwitchActiveBuildTarget(options.targetGroup, options.target);
