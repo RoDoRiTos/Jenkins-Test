@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 
 namespace AutoBuild {
-    public class CIBuilder {
+    class CIBuilder {
         static string[] scenes = FindEnabledEditorScenes();
 
         static string appname = "YourProject";
