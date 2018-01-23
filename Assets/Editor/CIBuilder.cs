@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
-public class CIBuilder{
+class CIBuilder{
     static string[] scenes = FindEnabledEditorScenes();
 
     static string appname = "YourProject";
@@ -18,7 +18,7 @@ public class CIBuilder{
         return EditorScenes.ToArray();
     }
 
-    public static void PerformPCBuild() {
+    static void PerformPCBuild() {
         BuildPlayerOptions options = new BuildPlayerOptions();
         options.scenes = scenes;
         options.targetGroup = BuildTargetGroup.Standalone;
@@ -28,7 +28,7 @@ public class CIBuilder{
         Build(options);
     }
 
-    public static void ExportToAndroidStudio() {
+    static void ExportToAndroidStudio() {
         BuildPlayerOptions options = new BuildPlayerOptions();
         options.scenes = scenes;
         options.targetGroup = BuildTargetGroup.Android;
@@ -38,7 +38,7 @@ public class CIBuilder{
         Build(options);
     }
 
-    public static void Build(BuildPlayerOptions options) {
+    static void Build(BuildPlayerOptions options) {
         EditorUserBuildSettings.SwitchActiveBuildTarget(options.targetGroup, options.target);
         string res = BuildPipeline.BuildPlayer(options);
         if (res.Length > 0) {
